@@ -1,7 +1,7 @@
-FROM python:3.12-slim
+FROM python:3.13.1-slim
 
 # install UV
-COPY --from=ghcr.io/astral-sh/uv:0.5.9 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.5.23 /uv /bin/uv
 
 # copy files
 COPY . /app/
