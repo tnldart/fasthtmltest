@@ -31,7 +31,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-# If using a PAT - must be set in secrets for the repo
+# If using a PAT - must be set in secrets for the repo otherwise GITHUB_TOKEN is preconfigured
           password: ${{ secrets.GHCR_PAT }}
 #          password: ${{ secrets.GITHUB_TOKEN }}
       # This step uses [docker/metadata-action](https://github.com/docker/metadata-action#about) to extract tags and labels that will be applied to the specified image. The `id` "meta" allows the output of this step to be referenced in a subsequent step. The `images` value provides the base name for the tags and labels.
