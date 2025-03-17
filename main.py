@@ -15,8 +15,7 @@ def get():
 
 @rt("/content/{fname:path}")
 async def get_markdown(request):
-    fname = request.path_params['fname']
-    file_path = pathlib.Path("content") / fname
+    file_path = pathlib.Path("content") / (fname := request.path_params['fname'])
     content = file_path.read_text()
     return Titled(fname, Div(content, cls="marked"))
 
